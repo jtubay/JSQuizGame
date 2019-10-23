@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <link href="styles.css" rel="stylesheet">
-    <script defer src="script.js"></script>
     <title>Quiz App</title>
 </head>
 
@@ -14,6 +14,7 @@
     <div class="head">
         <header>
             <a href="./scoresheet.html">High scores!</a>
+            <p class="time" id="timer">Timer</p>
         </header>
     </div>
 
@@ -36,8 +37,16 @@
         <div class="controls">
             <button id="start-btn" class="start-btn btn">Start Quiz</button>
             <button id="next-btn" class="next-btn btn hide">Next</button>
+            <button id="done-btn" class="done-btn btn hide">Done</button>
+        </div>
+        <div class="done hide" id="all-done">
+            <h1>All done</h1>
+            <p>Enter initials:</p><input type="text">
+
         </div>
     </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>

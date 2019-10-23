@@ -1,9 +1,3 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Gotham Rounded;
-  }
-  
-  
   body {
     
     padding: 0;
@@ -39,7 +33,7 @@
   .btn {
     
     border: 1px solid blue;
-    background-color: red
+    background-color: gray;
     border-radius: 5px;
     padding: 5px 10px;
     color: black;
@@ -51,7 +45,7 @@
   }
   
   .btn.correct {
-    background-color: blue;
+    background-color: green;
     color: black;
   }
   
@@ -59,7 +53,7 @@
     background-color: red;
   }
   
-  .start-btn, .next-btn {
+  .start-btn, .next-btn .done-btn{
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
@@ -80,4 +74,5 @@
     background-color: royalblue;
     width: 100%;
     
-   }
+   } 
+
