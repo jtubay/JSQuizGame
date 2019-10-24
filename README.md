@@ -5,3 +5,5 @@ The project was meant to be a quiz game that would keep a timer and a score. I g
 
 
 Below are links to the current version and the repository:
+https://github.com/jtubay/JSQuizGame.git
+https://jtubay.github.io/JSQuizGame/
