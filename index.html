@@ -1,52 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link href="styles.css" rel="stylesheet">
-    <title>Quiz App</title>
-</head>
-
-<body>
-    <div class="head">
-        <header>
-            <a href="./scoresheet.html">High scores!</a>
-            <p class="time" id="timer">Timer</p>
-        </header>
-    </div>
-
-
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div id="question">Question</div>
-            <div id="answer-buttons" class="btn-grid">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
+    <title>Hello, world!</title>
+    
+  </head>
+  <body>
+    <nav class="bg-light p-4 mb-3">
+        <a href="High-scores.html">View Scores</a>
+        <span class="float-right">Time: 0</span>
+    </nav>
+    <!--start screen-->
+    <div class="container" id="start-screen">
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <h1>Quiz Game!</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam distinctio adipisci temporibus dicta mollitia hic similique, non minus nesciunt quibusdam beatae facere earum in accusamus eveniet enim commodi numquam.</p>
+                <button id="start-button" class="btn btn-primary">Start Game!</button>
             </div>
         </div>
-        <div class="explanation" id="inst">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-                answers will penalize your score/tim by fithteen seconds!</p>
-        </div>
-        <div class="controls">
-            <button id="start-btn" class="start-btn btn">Start Quiz</button>
-            <button id="next-btn" class="next-btn btn hide">Next</button>
-            <button id="done-btn" class="done-btn btn hide">Done</button>
-        </div>
-        <div class="done hide" id="all-done">
-            <h1>All done</h1>
-            <p>Enter initials:</p><input type="text">
+    </div>
 
+    <!--qanda-->
+    <div id="qa-screen" class="container d-none" >
+        <div class="row justify-content-center ">
+            <div class="col-8">
+                <h3 id="questions">Question?</h3>
+                <ul id="answers">
+                    <li>one</button></li>
+                    <li>two</li>
+                    <li>three</li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <script src="./script.js"></script>
-</body>
+    <div class="container d-none" id="end-screen">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <h1>Alldone!</h1>
+            <div class="row">
+                <div class="col-auto">
+                    <p id="final-score">Score</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto">
+                    <p>Enter your initials: <input type="text"></p>
+                    <button class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
