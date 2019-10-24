@@ -14,7 +14,7 @@
   <body>
     <nav class="bg-light p-4 mb-3">
         <a href="High-scores.html">View Scores</a>
-        <span class="float-right">Time: 0</span>
+        <h3 class="float-right" id="time">Timer: 0</h3>
     </nav>
     <!--start screen-->
     <div class="container" id="start-screen">
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <!--qanda-->
+    <!--QandA-->
     <div id="qa-screen" class="container d-none" >
         <div class="row justify-content-center ">
             <div class="col-8">
@@ -40,11 +40,11 @@
             </div>
         </div>
     </div>
-
+<!--All done screen-->
     <div class="container d-none" id="end-screen">
         <div class="row justify-content-center">
             <div class="col-auto">
-                <h1>Alldone!</h1>
+                <h1>All done!</h1>
             <div class="row">
                 <div class="col-auto">
                     <p id="final-score">Score</p>
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-auto">
                     <p>Enter your initials: <input type="text"></p>
-                    <button class="btn btn-primary">Submit</button>
+                    <button class="btn btn-primary"><a href="scoresheet.html">Submit</a></button>
                 </div>
             </div>
         </div>
