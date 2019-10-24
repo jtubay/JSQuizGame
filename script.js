@@ -16,5 +16,6 @@ for(var i =0; i< choices.length; i++){
     newChoice.classList.add("btn-primary", "btn")
     newChoice.setAttribute("style", "display:block; margin-bottom:10px")
     answersList.appendChild(newChoice)
+
 }
 });
