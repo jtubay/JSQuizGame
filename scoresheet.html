@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Highscores</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
+
 <body>
 
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-8">
                 <h1>Highscores!</h1>
-                <div >
-                    <ul id="highscores">
+                <div>
+                    <ul id="storeQuizScore">
 
                     </ul>
-                    <button class="btn btn-primary buttonText text-center" onclick="redirect()">Go Back</button>
-                    <button class="btn btn-primary buttonText text-center" onclick="clearHighscores()">Clear Highscores</button>
+                    <button class="btn btn-primary buttonText text-center mt-5" onclick="redirect()">Go Back</button>
+                    <button class="btn btn-primary buttonText text-center mt-5 ml-5" onclick="clearScores()">Clear Highscores</button>
                 </div>
 
             </div>
@@ -29,4 +31,5 @@
     <script src="./script.js"></script>
     <script src="./questions.js"></script>
 </body>
+
 </html>

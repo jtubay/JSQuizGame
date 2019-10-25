@@ -8,12 +8,15 @@ const timeDisplay = document.getElementById("timeremain");
 const finishGame = document.getElementById("endGame");
 const finalScore = document.getElementById("final-score");
 const timeRemain = document.getElementById("timeEl");
+const highscoresList = document.getElementById("storeQuizScore");
+
 
 //variables that value will change
 let currentQuestion = 0;
 let timeLeft = 75;
 let timing;
 let score;
+let playerName;
 
 //starts time counter
 function startTimer() {
@@ -34,7 +37,7 @@ function stopTimer() {
 }
 
 //runs when start button is clicked
-StartButton.addEventListener("click", function(event) {
+StartButton.addEventListener("click", function() {
   startScreen.classList.add("d-none");
   questionScreen.classList.remove("d-none");
   startTimer();
@@ -102,4 +105,39 @@ function endScreen() {
   finalScore.textContent = score;
 }
 
+const storeInitials = () => {
+  playerName = document.getElementById("initials").value;
+  const storePlayerScore = JSON.parse(localStorage.getItem("score"));
+
+  if (storePlayerScore !== null) {
+    storePlayerScore.push({userName: name, score: score});
+    localStorage.setItem("score", JSON.stringify(storePlayerScore));
+  } else {
+    localStorage.setItem("score", JSON.stringify([{userName: name, score: score}]));
+  }
+  location.href = "scoresheet.html"
+
+}
+
+function scoreList () {
+  const highscores = JSON.parse(localStorage.getItem("score"));
+  if(highscores === null) {
+    highscores.innerHTML = "<h1>No Highscores saved</h1>"
+  } else {
+    for (var s = 0; s < highscores.length; s++){
+      const list = document.createElement("li");
+      list.textContent = 'name: ' + highscores[j].userName + ' - ' + highscores[s].score;
+       highscoresList.appendChild(list);
+    }
+  }
+}
+
+
+function redirect() {
+  location.href = "index.html";
+};
+function clearScores () {
+  localStorage.clear();
+  scoreList()
+}
 
