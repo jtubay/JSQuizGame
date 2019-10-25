@@ -1,18 +1,21 @@
-var StartButton = document.getElementById("start-button");
-var startScreen = document.getElementById("start-screen");
-var questionScreen = document.getElementById("qa-screen");
-var questionHeading = document.getElementById("question");
-var answerList = document.getElementById("answers");
-var timeDisplay = document.getElementById("timeremain");
-var finishGame = document.getElementById("endGame");
-var finalScore = document.getElementById("final-score");
-var timeRemain = document.getElementById("timeEl");
-var name;
-var currentQuestion = 0;
-var timeLeft = 75;
-var timing;
-var score;
+//defined variables to be used
+const StartButton = document.getElementById("start-button");
+const startScreen = document.getElementById("start-screen");
+const questionScreen = document.getElementById("qa-screen");
+const questionHeading = document.getElementById("question");
+const answerList = document.getElementById("answers");
+const timeDisplay = document.getElementById("timeremain");
+const finishGame = document.getElementById("endGame");
+const finalScore = document.getElementById("final-score");
+const timeRemain = document.getElementById("timeEl");
 
+//variables that value will change
+let currentQuestion = 0;
+let timeLeft = 75;
+let timing;
+let score;
+
+//starts time counter
 function startTimer() {
   timing = setInterval(function() {
     timeLeft--;
@@ -21,15 +24,16 @@ function startTimer() {
     if (timeLeft < 1) {
       clearInterval(timing);
       endScreen();
-    } 
-    
+    }   
   }, 1000);
 }
 
+//function to stop timer
 function stopTimer() {
   clearInterval(timing);
 }
 
+//runs when start button is clicked
 StartButton.addEventListener("click", function(event) {
   startScreen.classList.add("d-none");
   questionScreen.classList.remove("d-none");
@@ -37,6 +41,7 @@ StartButton.addEventListener("click", function(event) {
   setUpGame();
 });
 
+//arrow function containing the dynamic js that will set up the questions
 const setUpGame = () => {
   questionHeading.textContent = questions[currentQuestion].title;
   answerList.innerHTML = "";
@@ -58,11 +63,13 @@ const setUpGame = () => {
   }
 };
 
+//sets next question as question is clicked 
 function nextQuestion() {
   currentQuestion++;
   setUpGame();
 }
 
+//checks answers
 function answerChecker(event) {
   if (
     event.target.attributes.dataChoice.value ===
@@ -81,6 +88,8 @@ function answerChecker(event) {
     endScreen();
   }
 }
+
+//load the final screen
 
 function endScreen() {
   if (timeLeft < 0) {
