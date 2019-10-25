@@ -1,71 +1,87 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en" style="height: 100vh;">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
 
-    <title>Hello, world!</title>
-    
-  </head>
-  <body>
-    <nav class="bg-light p-4 mb-3">
-        <a href="High-scores.html">View Scores</a>
-        <h3 class="float-right" id="time">Timer: 0</h3>
+</head>
+
+<body class=>
+
+    <!--header -->
+    <nav class="bg-dark p-3 mb-5">
+        <div class="row">
+            <div class="col-10">
+                <a href="./scoresheet.html" class="text-left ml-md-3">View Highscores</a>
+            </div>
+            <div class="col-auto">
+                <h6 class="text-white" id="timeremain">Time: 0</h6>
+            </div>
+        </div>
+        <!--End header-->
+
     </nav>
-    <!--start screen-->
+
+    <!--Begin Quiz-->
     <div class="container" id="start-screen">
         <div class="row justify-content-center">
-            <div class="col-8 text-center">
-                <h1>Quiz Game!</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam distinctio adipisci temporibus dicta mollitia hic similique, non minus nesciunt quibusdam beatae facere earum in accusamus eveniet enim commodi numquam.</p>
-                <button id="start-button" class="btn btn-primary">Start Game!</button>
+            <div class="col-sm-8 text-center">
+                <h1 class="text-center">Quiz Game</h1>
+                <hr>
+                <p>Try to answer the following code-related questions within the time limit. keep in mind that incorrect
+                    answers will penalize your score/time by 10 seconds!</p>
+                <button class="btn btn-primary rounded" id="start-button">Start Game</button>
             </div>
         </div>
     </div>
 
-    <!--QandA-->
-    <div id="qa-screen" class="container d-none" >
-        <div class="row justify-content-center ">
-            <div class="col-8">
-                <h3 id="questions">Question?</h3>
-                <ul id="answers">
-                    <li>one</button></li>
-                    <li>two</li>
-                    <li>three</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-<!--All done screen-->
-    <div class="container d-none" id="end-screen">
+    <!--Skeleton for Q and A screen-->
+    <div class="container d-none" id="qa-screen">
         <div class="row justify-content-center">
-            <div class="col-auto">
-                <h1>All done!</h1>
-            <div class="row">
-                <div class="col-auto">
-                    <p id="final-score">Score</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-auto">
-                    <p>Enter your initials: <input type="text"></p>
-                    <button class="btn btn-primary"><a href="scoresheet.html">Submit</a></button>
-                </div>
+            <div class="col-sm-8">
+                <h3 id="question">question?</h3>
+                <div id="answers"></div>
             </div>
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!--End game screen-->
+    <div class="container d-none" id="endGame">
+        <div class="row">
+            <div class="col-sm-8 text-center">
+                <h1 class="text-center">All Done!</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-8">
+                <span id="score">Your final scroe is <span id="final-score">75</span></span>
+                <p>Enter your initials: <input type="text" id="initials"></p>
+                <!-- <div class="row justify-content-center"> -->
+                <button class="btn btn-primary buttonText text-center rounded" onclick="nameStorage()">Submit</button>
+            </div>
+        </div>
+    </div>
+    </div>
 
-    <script src="questions.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+    
+    <script src="./questions.js"></script>
+</body>
+
 </html>
